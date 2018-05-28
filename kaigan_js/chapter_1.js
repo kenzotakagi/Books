@@ -19,3 +19,13 @@ var myUndefined = undefined;
 var myFunction = new Function('x', 'y', 'return x * y' );
 
 console.log(typeof myUndefined, typeof myFunction)
+
+var CustomConstructor = function CustomConstructor() {
+    return 'wow!';
+};
+var instanceOfCustomObject = new CustomConstructor();
+console.log(instanceOfCustomObject.constructor);
+
+var myBoolean = new Boolean(true);
+myBoolean.prop = "wow";
+console.log(myBoolean.prop);
