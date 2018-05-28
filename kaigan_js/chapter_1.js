@@ -14,3 +14,8 @@ var Person = function(age, living, gender) {
 };
 
 var cody = new Person(true, 33, 'male')
+
+var myUndefined = undefined;
+var myFunction = new Function('x', 'y', 'return x * y' );
+
+console.log(typeof myUndefined, typeof myFunction)
