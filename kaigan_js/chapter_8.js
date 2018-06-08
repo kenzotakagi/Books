@@ -15,3 +15,24 @@ Foo.prototype = {};
 var fooInstance = new Foo();
 console.log(fooInstance.constructor === Foo);
 
+var Person = function() {};
+Person.prototype.level = 1;
+Person.prototype.rank = 'beginner';
+Person.prototype.getStatus = function() {
+  return this.level + this.rank;
+};
+var chuck = new Person;
+console.log(chuck.getStatus());
+
+var Person = function(level, rank) {
+  if(level !== undefined) { this.level = level; }
+  if(rank !== undefined) { this.rank = rank; }
+};
+Person.prototype.level = 1;
+Person.prototype.rank = 'beginner';
+Person.prototype.getStatus = function() {
+  return this.level + this.rank;
+};
+var chuck = new Person(10, 'expert');
+console.log(chuck.getStatus());
+
