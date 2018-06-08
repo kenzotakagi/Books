@@ -36,3 +36,11 @@ Person.prototype.getStatus = function() {
 var chuck = new Person(10, 'expert');
 console.log(chuck.getStatus());
 
+var Person = function() { this.bar = 'bar' };
+Person.prototype.foo = 'foo';
+var Chef = function() { this.goo = 'goo' };
+Chef.prototype = new Person;
+var cody = new Chef();
+console.log(cody.foo);
+console.log(cody.bar);
+console.log(cody.goo);
