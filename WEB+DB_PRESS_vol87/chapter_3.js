@@ -131,3 +131,23 @@ for (var i = 0; i < 5; i++) {
 for (let i = 0; i < 5; i++) {
   setTimeout(function() {console.log(i)}, i * 100);
 }
+
+//es6
+function foo(first, second, ...rest) {
+  console.log("first: ", first);
+  console.log("second: ", second);
+  console.log("rest: ", rest);
+}
+foo(1,2,3,4,5)
+
+hoge = [1,2,3]
+console.log(Math.max.apply(null, hoge))
+console.log(Math.max(...hoge))
+
+var regexp = /(\d{4})(\d{2})(\d{2})/
+var date = regexp.exec('20151231');
+console.log(date);
+
+var arr = ["foo", "bar"]
+var iterator = arr[Symbol.iterator]();
+iterator.next();
