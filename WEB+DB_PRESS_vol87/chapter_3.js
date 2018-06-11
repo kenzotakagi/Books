@@ -58,3 +58,12 @@ class Person {
 var bob = new Person("Bob");
 bob.greet();
 var john = Person.create("john");
+
+//es5
+var foo = 0, bar = 1;
+var obj = { foo: foo, bar: bar };
+console.log(obj.foo, obj.bar);
+
+//es6
+var obj = { foo, bar }
+console.log(obj.foo, obj.bar);
