@@ -30,3 +30,31 @@ var john = {
     }, 1000);
   }
 }
+
+//es5
+function Person(name) {
+  this.name = name;
+}
+Person.prototype.greet = function() {
+  console.log("Hello I'm " + this.name);
+};
+Person.create = function(name) {
+  return new Person(name);
+}
+
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  greet() {
+    console.log("Hello I'm " + this.name);
+  }
+
+  static create(name) {
+    return new Person(name);
+  }
+}
+var bob = new Person("Bob");
+bob.greet();
+var john = Person.create("john");
