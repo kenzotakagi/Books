@@ -115,3 +115,19 @@ var counter = {
     this.count++;
   }
 };
+
+//es5/miss
+for (var i = 0; i < 5; i++) {
+  setTimeout(function() {console.log(i)}, i * 100);
+}
+//es5
+for (var i = 0; i < 5; i++) {
+  (function(x) {
+    setTimeout(function() {console.log(x)}, x * 100)
+  })(i);
+}
+
+//es6
+for (let i = 0; i < 5; i++) {
+  setTimeout(function() {console.log(i)}, i * 100);
+}
