@@ -87,3 +87,15 @@ class Author extends Person {
 
 var author = new Author("kenzo", "my first kiss");
 author.greet();
+
+var key = "foo";
+//es5
+var obj = {};
+obj[key] = 0;
+obj[key + "_bar"] = 1
+//es6
+var obj = {
+  [key] = 0;
+  [key + "_bar"] = 1;
+};
+console.log(obj.foo, obj.foo_bar);
