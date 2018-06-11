@@ -99,3 +99,19 @@ var obj = {
   [key + "_bar"] = 1;
 };
 console.log(obj.foo, obj.foo_bar);
+
+//es5
+var counter = {
+  count: 0;
+  increment: function {
+    this.count++;
+  }
+};
+
+//es6
+var counter = {
+  count: 0;
+  increment() {
+    this.count++;
+  }
+};
