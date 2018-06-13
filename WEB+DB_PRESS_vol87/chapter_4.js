@@ -31,3 +31,12 @@ class Foo {
     return privateNames.get(this);
   }
 }
+
+var sym1 = Symbol();
+console.log(typeof sym1);
+var sym2 = Symbol("foo");
+sym2.toString();
+
+var obj = {[sym2]: 1}
+Object.keys(obj);
+Object.getOwnPropertySymbols(obj);
