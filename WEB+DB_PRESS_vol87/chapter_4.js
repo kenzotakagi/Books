@@ -21,3 +21,13 @@ while(d = itr.next()) {
   console.log(d.done);
   console.log(d.value);
 }
+
+const privateNames = new WeakMap();
+class Foo {
+  constructor(name) {
+    privateNames.set(this, name)
+  }
+  getName() {
+    return privateNames.get(this);
+  }
+}
