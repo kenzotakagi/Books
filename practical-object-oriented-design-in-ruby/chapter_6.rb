@@ -5,6 +5,20 @@ class Bycicle
     @size = args[:size]
     @chain = args[:chain] || default_chain
     @tire_size = args[:tire_size] || default_tire_size
+    post_initialize(args)
+  end
+
+  def post_initialize(args)
+    nil
+  end
+
+  def local_spares
+    {}
+  end
+
+  def spares
+    { tire_size: tire_size,
+      chain: chain }.merge(local_spares)
   end
 
   def default_chain
@@ -19,9 +33,12 @@ end
 class RoadBike < Bycicle
   attr_reader :tape_color
 
-  def initialize(args)
+  def post_initialize(args)
     @tape_color = args[:tape_color]
-    super(args)
+  end
+
+  def local_spares
+    { tape_color: tape_color }
   end
 
   def default_tire_size
@@ -30,6 +47,17 @@ class RoadBike < Bycicle
 end
 
 class MountainBike < Bycicle
+  attr_reader :front_shock, :rear_shock
+
+  def post_initialize
+    @front_shock = front_shock
+    @rear_shock = rear_shock
+  end
+
+  def local_spares
+    { rear_shock: rear_shock }
+  end
+
   def default_tire_size
     '2.1'
   end
