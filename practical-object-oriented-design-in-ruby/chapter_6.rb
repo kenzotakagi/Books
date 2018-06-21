@@ -1,8 +1,8 @@
 class Bycicle
 end
 
-class RoadBike
+class RoadBike < Bycicle
 end
 
-class MountainBike
+class MountainBike < Bycicle
 end
