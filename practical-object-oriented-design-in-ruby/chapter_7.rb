@@ -14,24 +14,38 @@ class Bicycle
   def schedulable?(start_date, end_date)
     !scheduled?(start_date - lead_days, end_date)
   end
-end
-
-module Schedulable
-  attr_writer :schedule
-
-  def schedule
-    @schedule || ::Schedule.new
-  end
-
-  def schedulable?(start_date, end_date)
-    !scheduled?(start_date - lead_days, end_date)
-  end
 
   def scheduled?(start_date, end_date)
     schedule.scheduled?(self, start_date, end_date)
   end
 
   def lead_days
-    0
+    1
   end
 end
+
+require 'date'
+starting = Date.parse('2018/06/26')
+ending = Date.parse('2018/06/30')
+b = Bicycle.new
+b.schedulable?(starting, ending)
+
+#module Schedulable
+#  attr_writer :schedule
+#
+#  def schedule
+#    @schedule || ::Schedule.new
+#  end
+#
+#  def schedulable?(start_date, end_date)
+#    !scheduled?(start_date - lead_days, end_date)
+#  end
+#
+#  def scheduled?(start_date, end_date)
+#    schedule.scheduled?(self, start_date, end_date)
+#  end
+#
+#  def lead_days
+#    0
+#  end
+#end
