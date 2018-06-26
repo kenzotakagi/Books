@@ -1,6 +1,7 @@
 class Schedule
   def scheduled?(schedulable, start_date, end_date)
     puts "This #{schedulable.class} is not scheduled between #{start_date} and #{end_date}"
+    false
   end
 end
 
@@ -12,7 +13,7 @@ class Bicycle
   end
 
   def schedulable?(start_date, end_date)
-    !scheduled?(start_date - lead_days, end_date)
+    puts !scheduled?(start_date - lead_days, end_date)
   end
 
   def scheduled?(start_date, end_date)
