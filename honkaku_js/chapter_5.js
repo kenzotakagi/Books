@@ -21,3 +21,10 @@ function hoge() {
 hoge.call(null);
 hoge.call(obj1);
 hoge.call(obj2);
+
+var Member = function(firstName, lastName) {
+  if(!(this instanceof Member)) {
+    return new Member(firstName, lastName);
+  }
+  this.firstName = firstName;
+};
