@@ -66,3 +66,19 @@ starting = Date.parse('2018/06/26')
 ending = Date.parse('2018/06/30')
 b = Bicycle.new
 b.schedulable?(starting, ending)
+
+class Vehicle
+  include Schedulable
+
+  def lead_days
+    3
+  end
+end
+
+class Mechanic
+  include Schedulable
+
+  def lead_days
+    4
+  end
+end
