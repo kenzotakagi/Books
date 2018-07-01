@@ -38,7 +38,7 @@ class Parts
   end
 end
 
-class RoadBike < Parts
+class RoadBikeParts < Parts
   attr_reader :tape_color
 
   def post_initialize(args)
@@ -54,12 +54,12 @@ class RoadBike < Parts
   end
 end
 
-class MountainBike < Parts
+class MountainBikeParts < Parts
   attr_reader :front_shock, :rear_shock
 
-  def post_initialize
-    @front_shock = front_shock
-    @rear_shock = rear_shock
+  def post_initialize(args)
+    @front_shock = args[:ront_shock]
+    @rear_shock = args[:rear_shock]
   end
 
   def local_spares
@@ -70,3 +70,11 @@ class MountainBike < Parts
     '2.1'
   end
 end
+
+road_bike = Bycicle.new(size: 'L', parts: RoadBikeParts.new(tape_color: 'red'))
+puts road_bike.size
+puts road_bike.spares
+mountain_bike = Bycicle.new(size: 'L', parts: MountainBikeParts.new(rear_shock: 'Fox'))
+puts mountain_bike.size
+puts mountain_bike.spares
+
