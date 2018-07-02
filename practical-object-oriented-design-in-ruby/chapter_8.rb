@@ -36,6 +36,16 @@ class Part
   end
 end
 
+module PartsFactory
+  def self.build(config, part_class = Part, parts_class = Parts)
+    parts_class.new(config.collect do |part_confing|
+      part_class.new(name:        part_confing[0],
+                     description: part_confing[1],
+                     needs_spare: part_confing.fetch(2, true))
+    end)
+  end
+end
+
 road_config = [['chain',      '10-speed'],
                ['tire_size',  '23'],
                ['tape_color', 'red']]
