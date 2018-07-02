@@ -55,15 +55,5 @@ mountain_config = [['chain',       '10-speed'],
                    ['front_shock', 'Manitou', false],
                    ['rear_shock',  'Fox']]
 
-chain =         Part.new(name: 'chain',      description: '10-speed')
-road_tire =     Part.new(name: 'tire_size',  description: '23')
-tape =          Part.new(name: 'tape_color', description: 'red')
-mountain_tire = Part.new(name: 'tire_size',  description: '2.1')
-rear_shock =    Part.new(name: 'rear_shock', description: 'Fox')
-front_shock =   Part.new(name: 'front_shock',
-                         description: 'Manitou',
-                         needs_spare: false)
-
-mountain_bike = Bicycle.new(size: 'L', parts: Parts.new([chain, front_shock, rear_shock]))
-puts mountain_bike.spares.size
-puts mountain_bike.parts.size
+puts PartsFactory.build(road_config)
+puts PartsFactory.build(mountain_config)
