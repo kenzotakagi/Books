@@ -23,8 +23,6 @@ class Parts
   end
 end
 
-##################
-
 class Part
   attr_reader :name, :description, :needs_spare
 
@@ -34,6 +32,8 @@ class Part
     @needs_spare = args.fetch(:needs_spare, true)
   end
 end
+
+##################
 
 class Parts
   attr_reader :chain, :tire_size
