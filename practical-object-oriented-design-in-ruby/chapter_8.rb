@@ -36,6 +36,15 @@ class Part
   end
 end
 
+road_config = [['chain',      '10-speed'],
+               ['tire_size',  '23'],
+               ['tape_color', 'red']]
+
+mountain_config = [['chain',       '10-speed'],
+                   ['tire_size',   '2.1'],
+                   ['front_shock', 'Manitou', false],
+                   ['rear_shock',  'Fox']]
+
 chain =         Part.new(name: 'chain',      description: '10-speed')
 road_tire =     Part.new(name: 'tire_size',  description: '23')
 tape =          Part.new(name: 'tape_color', description: 'red')
