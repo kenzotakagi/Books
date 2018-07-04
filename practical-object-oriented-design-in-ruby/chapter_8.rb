@@ -26,23 +26,16 @@ class Parts
   end
 end
 
-class Part
-  attr_reader :name, :description, :needs_spare
-
-  def initialize(args)
-    @name = args[:name]
-    @description = args[:description]
-    @needs_spare = args.fetch(:needs_spare, true)
-  end
-end
-
+require 'ostruct'
 module PartsFactory
-  def self.build(config, part_class = Part, parts_class = Parts)
-    parts_class.new(config.collect do |part_confing|
-      part_class.new(name:        part_confing[0],
-                     description: part_confing[1],
-                     needs_spare: part_confing.fetch(2, true))
-    end)
+  def self.build(config, parts_class = Parts)
+    parts_class.new(config.collect { |part_confing| create_part(part_confing) })
+  end
+
+  def self.create_part(part_confing)
+    OpenStruct.new(name:        part_confing[0],
+                   description: part_confing[1],
+                   needs_spare: part_confing.fetch(2, true))
   end
 end
 
