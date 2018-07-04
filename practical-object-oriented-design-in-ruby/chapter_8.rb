@@ -48,5 +48,7 @@ mountain_config = [['chain',       '10-speed'],
                    ['front_shock', 'Manitou', false],
                    ['rear_shock',  'Fox']]
 
-puts PartsFactory.build(road_config)
-puts PartsFactory.build(mountain_config)
+road_bike = Bicycle.new(size: 'L', parts: PartsFactory.build(road_config))
+puts road_bike.spares
+mountain_bike = Bicycle.new(size: 'L', parts: PartsFactory.build(mountain_config))
+puts mountain_bike.spares
