@@ -40,3 +40,4 @@ Member.prototype.getName = function() {
 
 var mem = new Member('takagi', 'kenzo')
 console.log(mem.getName());
+
