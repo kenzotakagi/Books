@@ -49,3 +49,11 @@ console.log(mem1.sex + '|' + mem2.sex);
 mem2.sex = '女';
 console.log(mem1.sex + '|' + mem2.sex);
 
+Member.prototype = {
+  getName : function() {
+    return this.lastName + '' + this.firstName
+  },
+  toString : function() {
+    return this.lastName + this.firstName
+  }
+};
