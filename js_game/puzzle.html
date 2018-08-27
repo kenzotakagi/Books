@@ -16,8 +16,40 @@
         }
     </style>
     <script>
+        //1
         "use strict";
         var tiles = [];
+
+        //2
+        function init() {
+            //3
+            var table = document.getElementById("table");
+
+            //4
+            for (var i = 0; i < 4; i++) {
+                //5
+                var tr = document.createElement("tr");
+                //6
+                for (var j = 0; j < 4; j++) {
+                    //7
+                    var td = document.createElement("td");
+                    var index = i * 4 + j;
+                    td.className = "title";
+                    td.index = index;
+                    td.value = index;
+                    td.textContent = index == 0 ? "" : index;
+                    td.onclick = click;
+                    //8
+                    tr.appendChild(td);
+                    tiles.push(td);
+                }
+                table.appendChild(tr);
+            }
+
+            for(var i = 0; i < 1000; i++) {
+                click({ srcElement: {index: Math.floor(Math.random() * 16)}})
+            }
+        }
     </script>
 </head>
 <body>
