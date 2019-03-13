@@ -1,13 +1,17 @@
 import java.util.Scanner;
 
 public class Main {
-  public static void main(String[] args){
-    int ans = add(100, 10);
-    System.out.println("100 + 10 =" + ans);
+  public static int[] makeArray(int size) {
+    int[] newArray = new int[size];
+    for (int i = 0; i < newArray.length; i++) {
+      newArray[i] = i;
+    }
+    return newArray;
   }
-
-  public static int add(int x, int y){
-    int ans = x + y;
-    return ans;
+  public static void main(String[] argas) {
+    int[] array = makeArray(3);
+    for (int i : array) {
+      System.out.println(i);
+    }
   }
 }
