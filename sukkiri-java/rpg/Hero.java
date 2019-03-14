@@ -5,6 +5,13 @@ public class Hero {
     this.hp = 100;
     System.out.println(this.name + "は眠って回復した!");
   }
+  Hero(String name) {
+    this.hp = 100;
+    this.name = name;
+  }
+  Hero() {
+    this("ダミー");
+  }
   void sit(int sec) {
     this.hp += sec;
     System.out.println(this.name + "は、" + sec + "秒座った!");

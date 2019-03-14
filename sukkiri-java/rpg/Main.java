@@ -1,8 +1,6 @@
 public class Main {
   public static void main(String[] args) {
-    Hero h = new Hero();
-    h.name = "タカギ";
-    h.hp = 100;
+    Hero h = new Hero("高木");
 
     Matango m1 = new Matango();
     m1.hp = 50;
