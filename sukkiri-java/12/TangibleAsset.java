@@ -1,3 +1,8 @@
+public interface Thing {
+  double getWeight();
+  void setWeight(double weight);
+}
+
 public abstract class Asset {
   private String name;
   private int price;
