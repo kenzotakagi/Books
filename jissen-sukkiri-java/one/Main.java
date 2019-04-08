@@ -7,4 +7,11 @@ public class Main {
     String s = sb.toString();
     String[] a = s.split(",");
   }
+  
+  String concatPath(String folder, String file) {
+    if(!folder.endsWith("¥¥")) {
+      folder += "¥¥";
+    }
+    return folder + file;
+  };
 }
