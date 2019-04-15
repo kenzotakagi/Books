@@ -23,4 +23,14 @@ public class Book implements Comparable<Book>, Cloneable {
     }
     return true;
   }
+  public int compareTo(Book o) {
+    return this.publishDate.compareTo(o.publishDate);
+  }
+  public Book clone() {
+    Book b = new Book();
+    b.title = this.title;
+    b.comment = this.comment;
+    b.publishDate = (Date) this.publishDate.clone();
+    return b;
+  }
 }
